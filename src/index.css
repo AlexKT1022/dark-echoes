@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+
+header {
+  margin-bottom: 10px;
+}
+
+main {
+  display: grid;
+  gap: 1ch;
+}
+
+@media (width >= 500px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.episode-list h2 {
+  margin-bottom: 10px;
+}
+
+.episode-list ul {
+  display: grid;
+  gap: 1ch;
+
+  list-style-type: none;
+  padding: 0.25rem;
+}
+
+.episode-list .episode-card {
+  padding: 1ch;
+  border: 1px solid #ccc;
+}
+
+.episode-list .episode-card:hover {
+  cursor: pointer;
+  font-style: italic;
+}
+
+.episode-details {
+  padding: 0.25rem;
+}
+
+.episode-details h2 {
+  margin-bottom: 10px;
+}
+
+.episode-details .episode-info-text {
+  margin-bottom: 10px;
+}
+
+.episode-details button {
+  padding: 1%;
+  width: 100%;
+}
