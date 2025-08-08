@@ -36,7 +36,7 @@ const App = () => {
         {!selectedEpisode ? (
           <>
             <h2>No Episode Selected</h2>
-            <p>Select an episode!</p>
+            <p>Select an episode to start watching!</p>
           </>
         ) : (
           <>
@@ -47,12 +47,14 @@ const App = () => {
               <h3>{selectedEpisode.title}</h3>
               <p>{selectedEpisode.description}</p>
             </div>
-            <button
-              className='watch-now-button'
-              onClick={() => setShowPlayer(true)}
-            >
-              Watch Now
-            </button>
+            {!showPlayer && (
+              <button
+                className='watch-now-button'
+                onClick={() => setShowPlayer(true)}
+              >
+                Watch Now
+              </button>
+            )}
             {showPlayer && (
               <img
                 className='player'
