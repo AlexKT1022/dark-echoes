@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: black;
-  color: white;
+  background-color: #222831;
+  color: #dfd0b8;
   padding: 1rem;
 }
 
@@ -20,32 +20,29 @@ main {
   gap: 1ch;
 }
 
-@media (width >= 500px) {
-  main {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .episode-list h2 {
   margin-bottom: 10px;
 }
 
 .episode-list ul {
   display: grid;
-  gap: 1ch;
 
   list-style-type: none;
   padding: 0.25rem;
 }
 
 .episode-list .episode-card {
-  padding: 1ch;
-  border: 1px solid #ccc;
+  padding: 2ch;
+  border-bottom: 1px solid #393e46;
+}
+
+.episode-card:last-child {
+  border: 0;
 }
 
 .episode-list .episode-card:hover {
   cursor: pointer;
-  font-style: italic;
+  background-color: #393e46;
 }
 
 .episode-details {
@@ -60,7 +57,29 @@ main {
   margin-bottom: 10px;
 }
 
-.episode-details button {
-  padding: 1%;
+.watch-now-button {
+  background-color: #dfd0b8;
+  color: #393e46;
+  border: none;
+  padding: 10px;
   width: 100%;
+}
+
+.watch-now-button:hover {
+  cursor: pointer;
+}
+
+.watch-now-button:active {
+  background-color: #393e46;
+  color: #948979;
+}
+
+.player {
+  margin-top: 30px;
+}
+
+@media (width >= 500px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
 }

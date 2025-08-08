@@ -4,6 +4,12 @@ import { episodeList as episodeData } from './data';
 const App = () => {
   const [episodes] = useState(episodeData);
   const [selectedEpisode, setSelectedEpisode] = useState();
+  const [showPlayer, setShowPlayer] = useState(false);
+
+  const selectEpisode = (episode) => {
+    setShowPlayer(false);
+    setSelectedEpisode(episode);
+  };
 
   const EpisodeList = () => {
     return (
@@ -14,7 +20,7 @@ const App = () => {
             <li
               key={episode.id}
               className='episode-card'
-              onClick={() => setSelectedEpisode(episode)}
+              onClick={() => selectEpisode(episode)}
             >
               {episode.title}
             </li>
@@ -34,12 +40,26 @@ const App = () => {
           </>
         ) : (
           <>
-            <h2>Episode {selectedEpisode.id}</h2>
+            <h2>
+              {showPlayer && 'Now Watching: '}Episode {selectedEpisode.id}
+            </h2>
             <div className='episode-info-text'>
               <h3>{selectedEpisode.title}</h3>
               <p>{selectedEpisode.description}</p>
             </div>
-            <button>Watch Now</button>
+            <button
+              className='watch-now-button'
+              onClick={() => setShowPlayer(true)}
+            >
+              Watch Now
+            </button>
+            {showPlayer && (
+              <img
+                className='player'
+                src='https://i.pinimg.com/originals/bb/74/04/bb74046420c4c992b8cabc6e667abe40.gif'
+                alt='netflix intro'
+              />
+            )}
           </>
         )}
       </section>
